@@ -14,8 +14,4 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api', attendanceRoutes);
 
-// Serve Frontend Static Files
-app.use(express.static(path.join(__dirname, '../frontend')));
-
-// Export app for Vercel Serverless Function Execution
 module.exports = app;
