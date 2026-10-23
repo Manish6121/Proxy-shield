@@ -2,7 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-const DB_FILE = path.join(__dirname, '../database.json');
+// Use Vercel writeable /tmp directory in production, local file in dev
+const DB_FILE = process.env.VERCEL
+  ? '/tmp/database.json'
+  : path.join(__dirname, '../database.json');
 
 function initDB() {
   if (!fs.existsSync(DB_FILE)) {
@@ -47,7 +50,11 @@ function initDB() {
       attendance: [],
       incidents: []
     };
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf8');
+    try {
+      fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf8');
+    } catch (e) {
+      console.error("Error creating DB file:", e);
+    }
   }
 }
 
@@ -56,13 +63,16 @@ function getDB() {
   try {
     return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
   } catch (e) {
-    console.error("Error reading DB file, re-initializing:", e);
     return { users: [], sessions: [], attendance: [], incidents: [] };
   }
 }
 
 function saveDB(data) {
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
+  try {
+    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
+  } catch (e) {
+    console.error("Error writing to DB file:", e);
+  }
 }
 
 module.exports = { getDB, saveDB, getUsers: () => getDB().users };
