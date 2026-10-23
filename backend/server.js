@@ -18,12 +18,16 @@ app.use('/api', attendanceRoutes);
 // Serve Frontend Static Files
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Root Redirect to Login
+// Root Redirect
 app.get('/', (req, res) => {
-  res.redirect('/views/login.html');
+  res.sendFile(path.join(__dirname, '../frontend/views/login.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 ProxyShield Server running on http://localhost:${PORT}`);
-  console.log(`🔑 Login Page: http://localhost:${PORT}/views/login.html`);
-});
+// Start server locally (ignored on Vercel)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
