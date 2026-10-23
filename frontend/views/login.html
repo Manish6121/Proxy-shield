@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProxyShield — Single Portal Login</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+  <div class="card" style="width: 100%; max-width: 420px;">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <div class="brand-logo" style="display: inline-block; margin-bottom: 8px;">PS</div>
+      <h2 style="color: var(--cyan);">ProxyShield ERP Login</h2>
+      <p style="color: var(--muted); font-size: 0.85rem;">Unified Role-Based Authentication</p>
+    </div>
+
+    <form id="loginForm">
+      <div style="margin-bottom: 15px;">
+        <label style="font-size: 0.85rem; color: var(--muted);">Enrollment / Faculty ID</label>
+        <input type="text" id="identifier" placeholder="e.g. 240919106125 or FAC101" required>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label style="font-size: 0.85rem; color: var(--muted);">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn btn-cyan">Sign In to Dashboard</button>
+    </form>
+
+    <div id="loginAlert" class="status"></div>
+
+    <div
+      style="margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); text-align: center;">
+      <strong>Demo Credentials:</strong><br>
+      Student: <code>240919106125</code> / <code>student123</code><br>
+      Faculty: <code>FAC101</code> / <code>faculty123</code>
+    </div>
+  </div>
+
+  <script src="../js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProxyShield — Student Portal</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">PS</div>
+        <div>
+          <h1 style="font-size: 1.3rem; color: var(--cyan);">Student Portal</h1>
+          <p id="studentInfo" style="font-size: 0.85rem; color: var(--muted);">Manish Kumar</p>
+        </div>
+      </div>
+      <div class="user-meta">
+        <button class="btn-outline" onclick="logout()">Logout</button>
+      </div>
+    </header>
+
+    <div class="card" style="max-width: 520px; margin: 0 auto 24px auto;">
+      <h2>📍 Active Classroom Check-In</h2>
+      <p style="color: var(--muted); margin: 6px 0 18px 0;">Cyber Security (BCA-508) | Room 204</p>
+      
+      <label>Enter 6-Digit Passcode from Projector Screen:</label>
+      <input type="text" id="studentTotp" class="totp-input" maxlength="6" placeholder="000000">
+      
+      <button class="btn btn-cyan" onclick="submitStudentCheckIn()">Verify Device GPS & Submit</button>
+      <div id="studentStatus" class="status"></div>
+    </div>
+
+    <div class="card">
+      <h3>Verified Attendance History Ledger</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date & Time</th>
+            <th>Course</th>
+            <th>Room</th>
+            <th>Verification Status</th>
+          </tr>
+        </thead>
+        <tbody id="historyTable">
+          <tr><td colspan="4" style="text-align:center; color: var(--muted);">Loading history...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/student.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "proxyshield-decoupled-auth",
+  "version": "1.0.0",
+  "description": "ProxyShield ERP with Decoupled HTML/CSS/JS Frontend, Express REST API, Role-Based JWT Auth, 3D Geofencing & 15s Dynamic TOTP",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "otplib": "^12.0.1"
+  }
+}

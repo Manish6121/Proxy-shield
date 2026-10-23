@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProxyShield — Projector View</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #030611;">
+  <div class="card" style="max-width: 550px; width: 100%; text-align: center; padding: 40px; border-color: var(--cyan);">
+    <h2 id="projCourse">Cyber Security (BCA-508)</h2>
+    <p id="projRoom" style="color: var(--muted); margin-top: 6px;">Room 204 | Prof. Akansh Verma</p>
+
+    <div id="liveTotpCode" class="totp-display">------</div>
+
+    <p style="color: var(--text);">Dynamic passcode refreshes in <span id="totpTimer" style="color: var(--cyan); font-weight: 800;">15</span>s</p>
+  </div>
+
+  <script src="../../js/projector.js"></script>
+</body>
+</html>

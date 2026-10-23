@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProxyShield — Faculty Command Console</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">PS</div>
+        <div>
+          <h1 style="font-size: 1.3rem; color: var(--emerald);">Faculty Command Console</h1>
+          <p id="facultyInfo" style="font-size: 0.85rem; color: var(--muted);">Prof. Akansh Verma</p>
+        </div>
+      </div>
+      <div class="user-meta">
+        <button class="btn-outline" onclick="window.open('projector.html', '_blank')">📺 Launch Projector View</button>
+        <button class="btn-outline" onclick="window.location.href='reports.html'">📊 Reports & Audits</button>
+        <button class="btn-outline" onclick="logout()">Logout</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h3 style="color: var(--emerald);">⚡ 1-Click Pentagon Auto-Fence Creator</h3>
+        <p style="color: var(--muted); margin-top: 6px; font-size: 0.9rem;">Captures your live GPS coordinates and instantly generates an 8-meter 5-point regular pentagon spatial boundary.</p>
+        <button class="btn btn-emerald" onclick="triggerAutoFence()">📍 Capture GPS & Auto-Generate Geofence</button>
+        <div id="facultyStatus" class="status"></div>
+      </div>
+
+      <div class="card">
+        <h3 style="color: var(--emerald);">📥 Master Ledger Reports</h3>
+        <p style="color: var(--muted); margin-top: 6px; font-size: 0.9rem;">Download full verified student attendance logs as a formatted CSV ledger file.</p>
+        <button class="btn btn-emerald" onclick="window.location.href='/api/reports/csv'">Export Master CSV Ledger</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px;">
+      <h3>Live Security Incident Stream</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Incident ID</th>
+            <th>Time</th>
+            <th>Student</th>
+            <th>Violation Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="auditTable">
+          <tr><td colspan="5" style="text-align:center; color: var(--muted);">Loading incidents...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../../js/auth.js"></script>
+  <script src="../../js/faculty.js"></script>
+</body>
+</html>
