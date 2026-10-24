@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "id": "USR-001",
+      "identifier": "240919106125",
+      "name": "Manish Kumar",
+      "role": "student",
+      "passwordHash": "$2a$10$.pImYSWsWw0.GiDZWCirY.YWI9QExlpVDp6sMfQI3lG7DgGSbkT8a"
+    },
+    {
+      "id": "USR-002",
+      "identifier": "FAC101",
+      "name": "Prof. Akansh Verma",
+      "role": "faculty",
+      "passwordHash": "$2a$10$.pImYSWsWw0.GiDZWCirY.olzmoDJW4Bcs/ISl51whOPUn1r7coie"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "SESS-101",
+      "course": "Cyber Security (BCA-508)",
+      "faculty": "Prof. Akansh Verma",
+      "room": "Room 204 (2nd Floor)",
+      "isActive": true,
+      "geofence": {
+        "polygon": [
+          [
+            28.6015,
+            77.3712
+          ],
+          [
+            28.6016,
+            77.3713
+          ],
+          [
+            28.6014,
+            77.3715
+          ],
+          [
+            28.6012,
+            77.3711
+          ],
+          [
+            28.6013,
+            77.371
+          ]
+        ],
+        "zMin": 210,
+        "zMax": 214
+      }
+    }
+  ],
+  "attendance": [],
+  "incidents": []
+}

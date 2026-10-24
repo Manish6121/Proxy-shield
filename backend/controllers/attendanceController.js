@@ -137,11 +137,9 @@ exports.getFacultyData = (req, res) => {
 // 6. Reports: Export Master CSV Ledger
 exports.exportCSV = (req, res) => {
   const currentDB = db.getDB();
-  let csv = 'RecordID,StudentName,StudentID,Course,Room,Latitude,Longitude,Altitude,Date,Time
-';
+  let csv = 'RecordID,StudentName,StudentID,Course,Room,Latitude,Longitude,Altitude,Date,Time\n';
   currentDB.attendance.forEach(r => {
-    csv += `${r.id},"${r.student}",${r.studentId},"${r.course}","${r.room}",${r.lat},${r.lng},${r.alt},${r.date},${r.time}
-`;
+    csv += `${r.id},"${r.student}",${r.studentId},"${r.course}","${r.room}",${r.lat},${r.lng},${r.alt},${r.date},${r.time}\n`;
   });
   res.header('Content-Type', 'text/csv');
   res.attachment('proxyshield_master_ledger.csv');
