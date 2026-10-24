@@ -10,8 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api', attendanceRoutes);
+
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 module.exports = app;
